@@ -44,7 +44,7 @@ const Signup = () => {
         //--------------local data to api(server) call and store in db
         try {
             setIsLoading(true)
-            const res = await axios.post(`http://localhost:8000/user/register`, formData,{
+            const res = await axios.post(`${import.meta.env.VITE_URL}/user/register`, formData,{
                 headers:{
                     "Content-Type":"application/json"
                 }

@@ -43,7 +43,7 @@ and when user want to logout then it must be clear its access token before leave
         console.log(formData);
         try {
             setIsLoading(true)
-            const res = await axios.post(`http://localhost:8000/user/login`, formData, {
+            const res = await axios.post(`${import.meta.env.VITE_URL}/user/login`, formData, {
                 headers: {
                     "Content-Type": "application/json"
                 }
@@ -135,7 +135,7 @@ and when user want to logout then it must be clear its access token before leave
                                         ) : "Login"
                                     }
                                 </Button>
-                                <Button onClick={()=>window.open("http://localhost:8000/auth/google", "_self")} className='w-full' variant='outline'>
+                                <Button onClick={()=>window.open(`${import.meta.env.VITE_URL}/auth/google`, "_self")} className='w-full' variant='outline'>
                                     <img src={Google} alt="" className='w-5'/>
                                     Login with Google
                                     </Button>
